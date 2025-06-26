@@ -1,6 +1,7 @@
 package aplicacao;
 
 public class Conta {
+    static int contadorDeContas = 0;
     String nomeTitular;
     int numero;
     double saldo;
@@ -16,5 +17,9 @@ public class Conta {
         } else {
             return false;
         }
+    }
+
+    static int retornaQuantidadeDeContas() {
+        return contadorDeContas;
     }
 }
