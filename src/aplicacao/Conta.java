@@ -6,13 +6,25 @@ public class Conta {
     int numero;
     double saldo;
 
+    Conta(String nomeTitular, double saldo){
+        this.nomeTitular = nomeTitular;
+        this.saldo = saldo;
+        Conta.contadorDeContas++;
+    }
+
+    Conta(String nomeTitular) {
+        this.nomeTitular = nomeTitular;
+        this.saldo = 0;
+        Conta.contadorDeContas++;
+    }
+
     void depositar(double valor) {
-        saldo += valor;
+        this.saldo += valor;
     }
 
     boolean sacar(double valor) {
-        if (valor <= saldo) {
-            saldo -= valor;
+        if (valor <= this.saldo) {
+            this.saldo -= valor;
             return true;
         } else {
             return false;
