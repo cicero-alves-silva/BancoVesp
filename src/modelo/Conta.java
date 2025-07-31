@@ -10,12 +10,14 @@ public class Conta {
         this.nomeTitular = nomeTitular;
         this.saldo = saldo;
         Conta.contadorDeContas++;
+        this.numero = Conta.contadorDeContas;
     }
 
     public Conta(String nomeTitular) {
         this.nomeTitular = nomeTitular;
         this.saldo = 0;
         Conta.contadorDeContas++;
+        this.numero = Conta.contadorDeContas;
     }
 
     public void depositar(double valor) {

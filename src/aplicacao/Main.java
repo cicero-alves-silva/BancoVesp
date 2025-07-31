@@ -7,6 +7,7 @@ public class Main {
         Conta conta1 = new Conta("Ana");
         conta1.depositar(100);
         System.out.println("DADOS DA CONTA");
+        System.out.println("NÚMERO: " + conta1.getNumero());
         System.out.println("TITULAR: " + conta1.getNomeTitular());
         System.out.println("SALDO: " + conta1.getSaldo());
         System.out.println("QUANT. DE CONTAS: " + Conta.getContadorDeContas());
@@ -14,6 +15,7 @@ public class Main {
 
         Conta conta2 = new Conta("Maria", 1000);
         System.out.println("DADOS DA CONTA");
+        System.out.println("NÚMERO: " + conta2.getNumero());
         System.out.println("TITULAR: " + conta2.getNomeTitular());
         System.out.println("SALDO: " + conta2.getSaldo());
         System.out.println("QUANT. DE CONTAS: " + Conta.getContadorDeContas());
