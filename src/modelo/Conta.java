@@ -4,7 +4,7 @@ public class Conta {
     private static int contadorDeContas = 0;
     private String nomeTitular;
     private int numero;
-    private double saldo;
+    protected double saldo;
 
     public Conta(String nomeTitular, double saldo){
         this.nomeTitular = nomeTitular;
