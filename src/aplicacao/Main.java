@@ -1,23 +1,39 @@
 package aplicacao;
 
 
+import modelo.Conta;
+import modelo.ContaEspecial;
 import modelo.ContaPoupanca;
+
+import java.util.Scanner;
+
 
 public class Main {
     public static void main(String[] args) {
-        ContaPoupanca contaPoupanca = new ContaPoupanca("Maria", 50);
-        System.out.println("DADOS DA CONTA");
-        System.out.println("NÚMERO: " + contaPoupanca.getNumero());
-        System.out.println("TITULAR: " + contaPoupanca.getNomeTitular());
-        System.out.println("SALDO: " + contaPoupanca.getSaldo());
-
-        contaPoupanca.depositar(50);
-        System.out.println("\nSALDO APÓS DEPÓSITO: " + contaPoupanca.getSaldo());
-
-        contaPoupanca.reajutar(0.05);
-        System.out.println("\nSALDO APÓS REAJUSTE: " + contaPoupanca.getSaldo());
-
-        contaPoupanca.sacar(25);
-        System.out.println("\nSALDO APÓS SAQUE: " + contaPoupanca.getSaldo());
+        Conta conta = null;
+        Scanner teclado = new Scanner(System.in);
+        System.out.println("---MENU DE OPÇÕES---");
+        System.out.println("1- Criar conta Padrão");
+        System.out.println("2- Criar conta Poupança");
+        System.out.println("3- Criar conta Especial");
+        System.out.print("Informe o tipo de conta de Ana: ");
+        int opcao = teclado.nextInt();
+        switch (opcao) {
+            case 1 -> conta = new Conta("Ana", 100);
+            case 2 -> conta = new ContaPoupanca("Ana", 100);
+            case 3 -> conta = new ContaEspecial("Ana", 100, 100);
+            default -> System.out.println("[ERRO] Tipo inválido!");
+        }
+        System.out.println("NÚMERO: " + conta.getNumero());
+        System.out.println("TITULAR: " + conta.getNomeTitular());
+        System.out.println("SALDO INICIAL: " + conta.getSaldo());
+        conta.depositar(100);
+        System.out.println("SALDO APÓS DEPÓSITO: " + conta.getSaldo());
+        if (conta.sacar(250)) {
+            System.out.println("SAQUE EFETUADO COM SUCESSO!!!");
+            System.out.println("SALDO APÓS SAQUE: " + conta.getSaldo());
+        } else {
+            System.out.println("SALDO INSUFICIENTE PARA O SAQUE!!!");
+        }
     }
 }

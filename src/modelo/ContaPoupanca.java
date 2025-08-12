@@ -5,7 +5,7 @@ public class ContaPoupanca extends Conta {
         super(nomeTitular, saldo);
     }
 
-    public void reajutar(double percentual) {
+    public void reajustar(double percentual) {
         double rendimento = getSaldo() * percentual;
         this.saldo += rendimento;
 //        setSaldo(getSaldo() + rendimento);
