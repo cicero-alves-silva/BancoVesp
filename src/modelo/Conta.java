@@ -58,4 +58,12 @@ public class Conta {
     public static int getContadorDeContas() {
         return contadorDeContas;
     }
+
+    public void imprimeTipoConta() {
+        System.out.println("CONTA PADRÃO");
+    }
+
+    public void imprimeTipoConta(String nomeBanco) {
+        System.out.println(nomeBanco + " - CONTA PADRÃO");
+    }
 }

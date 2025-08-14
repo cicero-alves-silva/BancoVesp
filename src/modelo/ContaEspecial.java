@@ -25,4 +25,14 @@ public class ContaEspecial extends Conta {
     public void setLimite(double limite) {
         this.limite = limite;
     }
+
+    @Override
+    public void imprimeTipoConta() {
+        System.out.println("CONTA ESPECIAL");
+    }
+
+    @Override
+    public void imprimeTipoConta(String nomeBanco) {
+        System.out.println(nomeBanco + " - CONTA ESPECIAL");
+    }
 }

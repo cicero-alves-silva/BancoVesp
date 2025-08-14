@@ -11,4 +11,13 @@ public class ContaPoupanca extends Conta {
 //        setSaldo(getSaldo() + rendimento);
     }
 
+    @Override
+    public void imprimeTipoConta() {
+        System.out.println("CONTA POUPANÇA");
+    }
+
+    @Override
+    public void imprimeTipoConta(String nomeBanco) {
+        System.out.println(nomeBanco + " - CONTA POUPANÇA");
+    }
 }
