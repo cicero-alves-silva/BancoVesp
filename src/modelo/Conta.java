@@ -66,4 +66,10 @@ public class Conta {
     public void imprimeTipoConta(String nomeBanco) {
         System.out.println(nomeBanco + " - CONTA PADRÃO");
     }
+
+    @Override
+    public String toString() {
+        return "nomeTitular= " + nomeTitular + ", numero= "
+                + numero +  ", saldo=" + saldo;
+    }
 }

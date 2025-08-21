@@ -35,4 +35,10 @@ public class ContaEspecial extends Conta {
     public void imprimeTipoConta(String nomeBanco) {
         System.out.println(nomeBanco + " - CONTA ESPECIAL");
     }
+
+    @Override
+    public String toString() {
+        return super.toString() +
+                ", limite= " + limite;
+    }
 }

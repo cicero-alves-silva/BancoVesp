@@ -24,10 +24,8 @@ public class Main {
             case 3 -> conta = new ContaEspecial("Ana", 100, 100);
             default -> System.out.println("[ERRO] Tipo inválido!");
         }
-        conta.imprimeTipoConta("IFPB BANK") ;
-        System.out.println("NÚMERO: " + conta.getNumero());
-        System.out.println("TITULAR: " + conta.getNomeTitular());
-        System.out.println("SALDO INICIAL: " + conta.getSaldo());
+        conta.imprimeTipoConta("IFPB BANK");
+        System.out.println(conta);
         conta.depositar(100);
         System.out.println("SALDO APÓS DEPÓSITO: " + conta.getSaldo());
         if (conta.sacar(250)) {
