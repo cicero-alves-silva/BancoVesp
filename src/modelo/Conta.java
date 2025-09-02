@@ -1,6 +1,6 @@
 package modelo;
 
-public class Conta {
+public abstract class Conta {
     private static int contadorDeContas = 0;
     private String nomeTitular;
     private int numero;
@@ -24,14 +24,7 @@ public class Conta {
         this.saldo += valor;
     }
 
-    public boolean sacar(double valor) {
-        if (valor <= this.saldo) {
-            this.saldo -= valor;
-            return true;
-        } else {
-            return false;
-        }
-    }
+    public abstract boolean sacar(double valor);
 
     public String getNomeTitular(){
         return this.nomeTitular;

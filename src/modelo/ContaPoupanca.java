@@ -12,6 +12,16 @@ public class ContaPoupanca extends Conta {
     }
 
     @Override
+    public boolean sacar(double valor) {
+        if (valor <= getSaldo()) {
+            setSaldo(getSaldo() - valor);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    @Override
     public void imprimeTipoConta() {
         System.out.println("CONTA POUPANÇA");
     }
