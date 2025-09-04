@@ -3,8 +3,8 @@ package modelo;
 public class ContaEspecial extends Conta {
     private double limite;
 
-    public ContaEspecial(String nomeTitular, double saldo, double limite){
-        super(nomeTitular, saldo);
+    public ContaEspecial(double saldo, double limite, Cliente cliente){
+        super(saldo, cliente);
         this.limite = limite;
     }
 

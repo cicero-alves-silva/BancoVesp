@@ -1,8 +1,8 @@
 package modelo;
 
 public class ContaPoupanca extends Conta {
-    public ContaPoupanca(String nomeTitular, double saldo){
-        super(nomeTitular, saldo);
+    public ContaPoupanca(double saldo, Cliente cliente){
+        super(saldo, cliente);
     }
 
     public void reajustar(double percentual) {

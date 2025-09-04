@@ -2,22 +2,22 @@ package modelo;
 
 public abstract class Conta {
     private static int contadorDeContas = 0;
-    private String nomeTitular;
     private int numero;
     protected double saldo;
+    private Cliente cliente;
 
-    public Conta(String nomeTitular, double saldo){
-        this.nomeTitular = nomeTitular;
+    public Conta(double saldo, Cliente cliente){
         this.saldo = saldo;
         Conta.contadorDeContas++;
         this.numero = Conta.contadorDeContas;
+        this.cliente = cliente;
     }
 
-    public Conta(String nomeTitular) {
-        this.nomeTitular = nomeTitular;
+    public Conta(Cliente cliente) {
         this.saldo = 0;
         Conta.contadorDeContas++;
         this.numero = Conta.contadorDeContas;
+        this.cliente = cliente;
     }
 
     public void depositar(double valor) {
@@ -25,14 +25,6 @@ public abstract class Conta {
     }
 
     public abstract boolean sacar(double valor);
-
-    public String getNomeTitular(){
-        return this.nomeTitular;
-    }
-
-    public void setNomeTitular(String nomeTitular) {
-        this.nomeTitular = nomeTitular;
-    }
 
     public double getSaldo() {
         return this.saldo;
@@ -52,6 +44,10 @@ public abstract class Conta {
         return contadorDeContas;
     }
 
+    public Cliente getCliente() {
+        return cliente;
+    }
+
     public void imprimeTipoConta() {
         System.out.println("CONTA PADRÃO");
     }
@@ -62,7 +58,6 @@ public abstract class Conta {
 
     @Override
     public String toString() {
-        return "nomeTitular= " + nomeTitular + ", numero= "
-                + numero +  ", saldo=" + saldo;
+        return "numero= " + numero + ", " + cliente +  ", saldo=" + saldo;
     }
 }
