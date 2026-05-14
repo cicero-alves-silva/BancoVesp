@@ -10,4 +10,13 @@ public class Conta {
             saldo += valor;
         }
     }
+
+    public boolean sacar(double valor){
+        if (valor > 0 && valor <= saldo) {
+            saldo -= valor;
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
