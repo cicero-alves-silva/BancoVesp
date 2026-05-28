@@ -1,10 +1,10 @@
-package aplicacao;
+package modelo;
 
 public class Conta {
-    public static int contadorDeContas = 0;
-    public String nomeTitular;
-    public int numero;
-    public double saldo;
+    private static int contadorDeContas = 0;
+    private String nomeTitular;
+    private int numero;
+    private double saldo;
 
     public Conta(String nomeTitular, double saldo){
         this.nomeTitular = nomeTitular;
@@ -33,7 +33,27 @@ public class Conta {
         }
     }
 
-    public static int retornaQuantidadeDeContas() {
+    public String getNomeTitular() {
+        return this.nomeTitular;
+    }
+
+    public void setNomeTitular(String nomeTitular) {
+        this.nomeTitular = nomeTitular;
+    }
+
+    public double getSaldo() {
+        return this.saldo;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+
+    public int getNumero() {
+        return this.numero;
+    }
+
+    public static int getContadorDeContas() {
         return Conta.contadorDeContas;
     }
 }
