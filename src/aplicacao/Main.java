@@ -1,20 +1,18 @@
-import modelo.Conta;
+import modelo.ContaPoupanca;
 
 void main() {
-    Conta conta1 = new Conta("Ana");
-    conta1.depositar(100);
+    ContaPoupanca contaPoupanca = new ContaPoupanca("Maria", 50);
     IO.println("DADOS DA CONTA");
-    IO.println("NÚMERO: " + conta1.getNumero());
-    IO.println("TITULAR: " + conta1.getNomeTitular());
-    IO.println("SALDO: " + conta1.getSaldo());
-    IO.println("QUANT. DE CONTAS: " + Conta.getContadorDeContas());
-    IO.println("==============================");
+    IO.println("NÚMERO: " + contaPoupanca.getNumero());
+    IO.println("TITULAR: " + contaPoupanca.getNomeTitular());
+    IO.println("SALDO: " + contaPoupanca.getSaldo());
 
-    Conta conta2 = new Conta("Maria", 1000);
-    IO.println("DADOS DA CONTA");
-    IO.println("NÚMERO: " + conta2.getNumero());
-    IO.println("TITULAR: " + conta2.getNomeTitular());
-    IO.println("SALDO: " + conta2.getSaldo());
-    IO.println("QUANT. DE CONTAS: " + Conta.getContadorDeContas());
-    IO.println("==============================");
+    contaPoupanca.depositar(50);
+    IO.println("\nSALDO APÓS DEPÓSITO: " + contaPoupanca.getSaldo());
+
+    contaPoupanca.reajustar(0.05);
+    IO.println("\nSALDO APÓS REAJUSTAR: " + contaPoupanca.getSaldo());
+
+    contaPoupanca.sacar(25);
+    IO.println("\nSALDO APÓS SAQUE: " + contaPoupanca.getSaldo());
 }
